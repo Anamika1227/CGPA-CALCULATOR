@@ -2,11 +2,10 @@
 #include <vector>
 #include <iomanip>
 #include <cctype>
-#include <limits>  // <-- Add this
-
+#include <limits>  
 using namespace std;
 
-// Struct to hold course details
+
 struct Course {
     string name;
     int credit;
@@ -14,7 +13,7 @@ struct Course {
     float gradePoint;
 };
 
-// Convert grade letter to grade point
+
 float getGradePoint(char grade) {
     switch (toupper(grade)) {
         case 'A': return 10.0;
@@ -27,7 +26,7 @@ float getGradePoint(char grade) {
     }
 }
 
-// Feedback based on grade
+
 string gradeFeedback(char grade) {
     switch (toupper(grade)) {
         case 'A': return "Excellent";
@@ -40,7 +39,7 @@ string gradeFeedback(char grade) {
     }
 }
 
-// Difficulty based on credit
+
 string courseDifficulty(int credit) {
     if (credit >= 5) return "Hard";
     else if (credit >= 3) return "Moderate";
@@ -85,7 +84,7 @@ int main() {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 
-    // Displaying results
+   
     cout << "\n?? COURSE REPORT:\n";
     cout << left << setw(20) << "Course"
          << setw(10) << "Credit"
@@ -110,7 +109,7 @@ int main() {
     cout << "\n?? Total Grade Points: " << totalPoints;
     cout << "\n?? CGPA: " << cgpa;
 
-    // Advice
+   
     cout << "\n?? Advice: ";
     if (cgpa >= 9) cout << "Outstanding Performance!";
     else if (cgpa >= 8) cout << "Very Good. Keep it up!";
